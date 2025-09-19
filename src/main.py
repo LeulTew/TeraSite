@@ -1,6 +1,53 @@
+import os
+import shutil
 from textnode import TextNode, TextType
 
+def copy_static_to_public(src_dir, dest_dir):
+    """
+    Recursively copy all contents from source directory to destination directory.
+    First deletes all contents of destination directory to ensure clean copy.
+    """
+    # Delete destination directory contents if it exists
+    if os.path.exists(dest_dir):
+        print(f"Deleting contents of {dest_dir}")
+        shutil.rmtree(dest_dir)
+    
+    # Create destination directory
+    os.makedirs(dest_dir, exist_ok=True)
+    print(f"Created directory {dest_dir}")
+    
+    # Copy all files and directories recursively
+    _copy_directory_contents(src_dir, dest_dir)
+
+def _copy_directory_contents(src_dir, dest_dir):
+    """Helper function to recursively copy directory contents"""
+    for item in os.listdir(src_dir):
+        src_path = os.path.join(src_dir, item)
+        dest_path = os.path.join(dest_dir, item)
+        
+        if os.path.isfile(src_path):
+            # Copy file
+            shutil.copy(src_path, dest_path)
+            print(f"Copied file: {src_path} -> {dest_path}")
+        elif os.path.isdir(src_path):
+            # Create directory and recurse
+            os.makedirs(dest_path, exist_ok=True)
+            print(f"Created directory: {dest_path}")
+            _copy_directory_contents(src_path, dest_path)
+
 def main():
+    # Get the project root directory (parent of src/)
+    project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    
+    # Copy static files to public directory
+    static_dir = os.path.join(project_root, "static")
+    public_dir = os.path.join(project_root, "public")
+    
+    print("Starting static site generation...")
+    copy_static_to_public(static_dir, public_dir)
+    print("Static site generation complete!")
+    
+    # Original demo code
     node = TextNode("This is some anchor text", TextType.LINK, "https://www.boot.dev")
     print(node)
 
