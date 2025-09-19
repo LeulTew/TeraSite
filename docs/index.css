@@ -35,8 +35,12 @@ header.site-header { display:flex; align-items:center; justify-content:space-bet
 .post-body p { color:var(--muted); margin-bottom:12px }
 
 /* Links */
-a { color:var(--accent); text-decoration:none; transition:color .18s ease, transform .18s ease }
-a:hover { color:var(--accent-2); transform:translateY(-1px) }
+a, a:link, a:visited { color: var(--accent); text-decoration: none; transition: color .18s ease, transform .18s ease }
+a:hover, a:focus { color: var(--accent-2); transform: translateY(-1px); text-decoration: underline }
+
+/* Ensure post links use accent color by default */
+.post a, .post a:link, .post a:visited { color: var(--accent); }
+.post a:hover, .post a:focus { color: var(--accent-2); text-decoration: underline }
 
 /* Lists */
 ul,ol { margin:1rem 0 1.6rem 1.4rem }
