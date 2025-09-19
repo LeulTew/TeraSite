@@ -1,13 +1,57 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact the Author</title>
-    <link href="/TeraSite/index.css" rel="stylesheet" />
-  </head>
+    <meta name="description" content="Exploring the depths of Middle-earth - A Tolkien Fan Club">
+    <link href="/TeraSite/TeraSite/index.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav style="margin-bottom: 2rem;">
+                <a href="/TeraSite/TeraSite/" style="color: var(--primary-gold); font-weight: bold; text-decoration: none;">← Back to Home</a>
+            </nav>
+            <h1 class="site-title" style="font-size: 2.5rem;">Contact the Author</h1>
+            <p class="site-subtitle">Exploring the depths of Tolkien's legendarium</p>
+        </header>
 
-  <body>
-    <article><div><h1>Contact the Author</h1><p><a href="/TeraSite/">< Back Home</a></p><p>Give me a call anytime to chat about Tolkien!</p><p><code>555-555-5555</code></p><p><b>"Váya márië."</b></p></div></article>
-  </body>
+        <main>
+            <article class="section">
+                <div><h1>Contact the Author</h1><p><a href="/TeraSite/">< Back Home</a></p><p>Give me a call anytime to chat about Tolkien!</p><p><code>555-555-5555</code></p><p><b>"Váya márië."</b></p></div>
+            </article>
+        </main>
+
+        <footer>
+            <p>✦ Made with ❤️ and countless cups of tea ✦</p>
+            <p>Exploring Middle-earth one story at a time</p>
+            <p><a href="/TeraSite/TeraSite/">Return Home</a> | Tolkien Fan Club 2025</p>
+        </footer>
+    </div>
+
+    <script>
+        // Simple scroll animations for a magical feel
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.section');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+
+            sections.forEach(section => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(20px)';
+                section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
 </html>
