@@ -1,6 +1,6 @@
 import unittest
 
-from block_markdown import markdown_to_blocks, BlockType, block_to_block_type, markdown_to_html_node
+from block_markdown import markdown_to_blocks, BlockType, block_to_block_type, markdown_to_html_node, extract_title
 
 
 class TestMarkdownToBlocks(unittest.TestCase):
@@ -247,6 +247,41 @@ the **same** even with inline stuff
         node = markdown_to_html_node(md)
         html = node.to_html()
         self.assertEqual(html, "<div></div>")
+
+
+class TestExtractTitle(unittest.TestCase):
+    def test_extract_title(self):
+        md = "# Hello World"
+        self.assertEqual(extract_title(md), "Hello World")
+
+    def test_extract_title_with_whitespace(self):
+        md = "#   Hello World   "
+        self.assertEqual(extract_title(md), "Hello World")
+
+    def test_extract_title_multiline(self):
+        md = """
+Some text here
+# My Title
+More content
+"""
+        self.assertEqual(extract_title(md), "My Title")
+
+    def test_extract_title_no_h1(self):
+        md = """
+## This is h2
+### This is h3
+No h1 here
+"""
+        with self.assertRaises(Exception):
+            extract_title(md)
+
+    def test_extract_title_h1_with_other_headers(self):
+        md = """
+# Main Title
+## Subtitle
+### Sub-subtitle
+"""
+        self.assertEqual(extract_title(md), "Main Title")
 
 
 if __name__ == "__main__":

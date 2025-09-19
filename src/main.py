@@ -1,6 +1,7 @@
 import os
 import shutil
 from textnode import TextNode, TextType
+from block_markdown import generate_page
 
 def copy_static_to_public(src_dir, dest_dir):
     """
@@ -45,6 +46,14 @@ def main():
     
     print("Starting static site generation...")
     copy_static_to_public(static_dir, public_dir)
+    
+    # Generate the main page
+    from_path = os.path.join(project_root, "content", "index.md")
+    template_path = os.path.join(project_root, "template.html")
+    dest_path = os.path.join(public_dir, "index.html")
+    
+    generate_page(from_path, template_path, dest_path)
+    
     print("Static site generation complete!")
     
     # Original demo code

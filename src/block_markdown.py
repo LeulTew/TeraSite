@@ -1,4 +1,5 @@
 from enum import Enum
+import os
 
 from htmlnode import HTMLNode, LeafNode, ParentNode, text_node_to_html_node
 from inline_markdown import text_to_textnodes
@@ -159,3 +160,47 @@ def markdown_to_html_node(markdown):
             parent.children.append(para_node)
     
     return parent
+
+
+def extract_title(markdown):
+    """Extract the h1 header from markdown content"""
+    lines = markdown.split('\n')
+    for line in lines:
+        stripped = line.strip()
+        if stripped.startswith('# ') and not stripped.startswith('##'):
+            # Found h1 header, extract title
+            return stripped[2:].strip()
+    
+    # No h1 header found
+    raise Exception("No h1 header found in markdown")
+
+
+def generate_page(from_path, template_path, dest_path):
+    """Generate an HTML page from markdown using a template"""
+    print(f"Generating page from {from_path} to {dest_path} using {template_path}")
+    
+    # Read markdown file
+    with open(from_path, 'r') as f:
+        markdown_content = f.read()
+    
+    # Read template file
+    with open(template_path, 'r') as f:
+        template_content = f.read()
+    
+    # Convert markdown to HTML
+    html_node = markdown_to_html_node(markdown_content)
+    html_content = html_node.to_html()
+    
+    # Extract title
+    title = extract_title(markdown_content)
+    
+    # Replace placeholders in template
+    final_html = template_content.replace("{{ Title }}", title).replace("{{ Content }}", html_content)
+    
+    # Create destination directory if it doesn't exist
+    dest_dir = os.path.dirname(dest_path)
+    os.makedirs(dest_dir, exist_ok=True)
+    
+    # Write the final HTML to destination
+    with open(dest_path, 'w') as f:
+        f.write(final_html)
