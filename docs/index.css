@@ -22,9 +22,9 @@ body {
   line-height:1.6;
 }
 
-.container { width:100%; max-width:980px; margin:40px auto; padding:28px }
+.container { width:100%; max-width:980px; margin:0px auto; padding-top:0 }
 
-header.site-header { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:18px }
+header.site-header { display:flex; align-items:center; justify-content:space-between; gap:16px }
 .brand { font-weight:600; color:var(--fg); text-decoration:none }
 .nav-links { list-style:none; display:flex; gap:12px }
 .nav-links a { color:var(--muted); text-decoration:none; padding:8px 12px; border-radius:10px; font-weight:600 }
