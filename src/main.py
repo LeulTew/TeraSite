@@ -1,5 +1,6 @@
 import os
 import shutil
+import sys
 from textnode import TextNode, TextType
 from block_markdown import generate_page, generate_pages_recursive
 
@@ -40,18 +41,21 @@ def main():
     # Get the project root directory (parent of src/)
     project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     
-    # Copy static files to public directory
+    # Get basepath from command line argument, default to "/"
+    basepath = sys.argv[1] if len(sys.argv) > 1 else "/"
+    
+    # Copy static files to docs directory
     static_dir = os.path.join(project_root, "static")
-    public_dir = os.path.join(project_root, "public")
+    docs_dir = os.path.join(project_root, "docs")
     
     print("Starting static site generation...")
-    copy_static_to_public(static_dir, public_dir)
+    copy_static_to_public(static_dir, docs_dir)
     
     # Generate all pages recursively
     content_dir = os.path.join(project_root, "content")
     template_path = os.path.join(project_root, "template.html")
     
-    generate_pages_recursive(content_dir, template_path, public_dir)
+    generate_pages_recursive(content_dir, template_path, docs_dir, basepath)
     
     print("Static site generation complete!")
     
