@@ -66,3 +66,76 @@ footer { text-align:center; padding:2rem 0; color:var(--muted); margin-top:3rem 
 /* Small interactive touches */
 .post a { transition: color .15s ease, text-decoration .15s ease }
 .post a:hover { text-decoration:underline }
+
+/* ---------------------------------------------
+   Additional base element styles to finish theme
+   --------------------------------------------- */
+
+/* Header / Site title */
+header.site-header { padding: 18px 0; align-items:center }
+.site-title { font-size:1.25rem; font-weight:700; color:var(--fg); letter-spacing:0.6px }
+.site-subtitle { font-size:0.9rem; color:var(--muted); margin-left:8px }
+
+/* Navigation */
+nav.main-nav { display:flex; align-items:center; gap:18px }
+.nav-left { display:flex; align-items:center; gap:12px }
+.nav-right { display:flex; gap:10px }
+.nav-links a { padding:8px 12px; border-radius:10px; color:var(--muted); font-weight:600; text-decoration:none }
+.nav-links a:hover, .nav-links a:focus { color:var(--fg); background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); outline:none }
+
+/* Post meta (date, author) */
+.post-meta { color:var(--muted); font-size:0.9rem; margin-bottom:10px }
+
+/* Headings */
+h1, .post-title { color:var(--fg); font-weight:700 }
+h2 { color:var(--fg); font-weight:700 }
+h3 { color:var(--fg); font-weight:600 }
+
+/* Horizontal rule */
+hr { border:0; height:1px; background:linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)); margin:1.6rem 0 }
+
+/* Lists */
+ul { list-style: disc; padding-left:1.6rem; color:var(--muted) }
+ol { list-style: decimal; padding-left:1.6rem; color:var(--muted) }
+li { margin-bottom:0.6rem }
+
+/* Blockquote */
+blockquote { border-left:4px solid rgba(102,208,255,0.12); padding:12px 16px; color:var(--muted); background: rgba(255,255,255,0.015); border-radius:8px }
+blockquote p { margin:0 }
+
+/* Code and pre */
+code, tt { background: rgba(255,255,255,0.02); padding:2px 6px; border-radius:6px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', monospace }
+pre { background: rgba(12,16,20,0.6); padding:16px; border-radius:10px; overflow:auto; color:var(--fg); font-size:0.95rem }
+pre code { background:transparent; padding:0 }
+
+/* Tables */
+table { width:100%; border-collapse:collapse; margin:1rem 0; font-size:0.95rem }
+th, td { padding:10px 12px; border-bottom:1px solid rgba(255,255,255,0.03); text-align:left }
+th { color:var(--fg); font-weight:700 }
+
+/* Forms */
+input[type="text"], input[type="email"], textarea, select {
+  width:100%; padding:10px 12px; border-radius:8px; border:1px solid rgba(255,255,255,0.04); background: rgba(0,0,0,0.25); color:var(--fg);
+}
+textarea { min-height:120px }
+input:focus, textarea:focus, select:focus { outline:none; box-shadow:0 6px 18px rgba(102,208,255,0.06); border-color:var(--accent) }
+
+/* Buttons */
+.btn, button { display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:10px; border:1px solid rgba(255,255,255,0.04); background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); color:var(--fg); cursor:pointer; transition:transform .12s ease, box-shadow .12s ease }
+.btn:hover, button:hover { transform:translateY(-2px); box-shadow:0 8px 20px rgba(2,6,23,0.5) }
+.btn-primary { background: linear-gradient(180deg, rgba(102,208,255,0.12), rgba(123,97,255,0.08)); border-color: rgba(102,208,255,0.12); color:var(--fg); font-weight:700 }
+
+/* Footer */
+footer.site-footer { margin-top:3rem; padding-top:24px; border-top:1px solid rgba(255,255,255,0.02); color:var(--muted); font-size:0.95rem }
+
+/* Focus outlines for accessibility */
+a:focus, button:focus, input:focus, textarea:focus { outline:2px solid rgba(102,208,255,0.12); outline-offset:2px }
+
+/* Subtle scrollbar styling */
+::-webkit-scrollbar { height:10px; width:12px }
+::-webkit-scrollbar-track { background: transparent }
+::-webkit-scrollbar-thumb { background: linear-gradient(180deg, rgba(102,208,255,0.12), rgba(123,97,255,0.08)); border-radius:10px }
+
+/* Small animation utility */
+.fade-up { animation: fadeInUp .9s ease both }
+
