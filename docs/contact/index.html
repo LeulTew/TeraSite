@@ -1,57 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact the Author</title>
-    <meta name="description" content="Exploring the depths of Middle-earth - A Tolkien Fan Club">
-        <link href="/TeraSite/index.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contact the Author</title>
+  <meta name="description" content="Tolkien Fan Club — thoughtful essays and curated writing">
+  <link rel="stylesheet" href="/TeraSite/index.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <nav style="margin-bottom: 2rem;">
-                                <a href="/TeraSite/" style="color: var(--primary-gold); font-weight: bold; text-decoration: none;">← Back to Home</a>
-            </nav>
-            <h1 class="site-title" style="font-size: 2.5rem;">Contact the Author</h1>
-            <p class="site-subtitle">Exploring the depths of Tolkien's legendarium</p>
-        </header>
+  <div class="site">
+    <header class="site-header">
+      <div class="container">
+        <nav class="nav">
+          <a class="brand" href="/TeraSite/">Tolkien Fan Club</a>
+          <ul class="nav-links">
+            <li><a href="/TeraSite/">Home</a></li>
+            <li><a href="/TeraSite/blog/">Blog</a></li>
+            <li><a href="/TeraSite/contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-        <main>
-            <article class="section">
-                <div><h1>Contact the Author</h1><p><a href="/TeraSite/">< Back Home</a></p><p>Give me a call anytime to chat about Tolkien!</p><p><code>555-555-5555</code></p><p><b>"Váya márië."</b></p></div>
-            </article>
-        </main>
+    <main class="content container">
+      <article class="post">
+        <h1 class="post-title">Contact the Author</h1>
+        <div class="post-body">
+          <div><h1>Contact the Author</h1><p><a href="/TeraSite/">< Back Home</a></p><p>Give me a call anytime to chat about Tolkien!</p><p><code>555-555-5555</code></p><p><b>"Váya márië."</b></p></div>
+        </div>
+      </article>
+    </main>
 
-        <footer>
-            <p>✦ Made with ❤️ and countless cups of tea ✦</p>
-            <p>Exploring Middle-earth one story at a time</p>
-                        <p><a href="/TeraSite/">Return Home</a> | Tolkien Fan Club 2025</p>
-        </footer>
-    </div>
-
-    <script>
-        // Simple scroll animations for a magical feel
-        document.addEventListener('DOMContentLoaded', function() {
-            const sections = document.querySelectorAll('.section');
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            });
-
-            sections.forEach(section => {
-                section.style.opacity = '0';
-                section.style.transform = 'translateY(20px)';
-                section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(section);
-            });
-        });
-    </script>
+    <footer class="site-footer">
+      <div class="container">© Tolkien Fan Club — All rights reserved.</div>
+    </footer>
+  </div>
 </body>
 </html>
