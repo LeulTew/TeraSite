@@ -1,7 +1,7 @@
 import os
 import shutil
 from textnode import TextNode, TextType
-from block_markdown import generate_page
+from block_markdown import generate_page, generate_pages_recursive
 
 def copy_static_to_public(src_dir, dest_dir):
     """
@@ -47,12 +47,11 @@ def main():
     print("Starting static site generation...")
     copy_static_to_public(static_dir, public_dir)
     
-    # Generate the main page
-    from_path = os.path.join(project_root, "content", "index.md")
+    # Generate all pages recursively
+    content_dir = os.path.join(project_root, "content")
     template_path = os.path.join(project_root, "template.html")
-    dest_path = os.path.join(public_dir, "index.html")
     
-    generate_page(from_path, template_path, dest_path)
+    generate_pages_recursive(content_dir, template_path, public_dir)
     
     print("Static site generation complete!")
     

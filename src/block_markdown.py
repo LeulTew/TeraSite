@@ -204,3 +204,34 @@ def generate_page(from_path, template_path, dest_path):
     # Write the final HTML to destination
     with open(dest_path, 'w') as f:
         f.write(final_html)
+
+
+def generate_pages_recursive(dir_path_content, template_path, dest_dir_path):
+    """Recursively generate HTML pages for all markdown files in content directory"""
+    for item in os.listdir(dir_path_content):
+        item_path = os.path.join(dir_path_content, item)
+        
+        if os.path.isfile(item_path) and item.endswith('.md'):
+            # This is a markdown file, generate HTML
+            # Remove .md extension and add .html
+            html_filename = item.replace('.md', '.html')
+            
+            # Build destination path maintaining directory structure
+            # Get relative path from content directory
+            rel_path = os.path.relpath(item_path, dir_path_content)
+            # Replace .md with .html
+            rel_html_path = rel_path.replace('.md', '.html')
+            # Build full destination path
+            dest_path = os.path.join(dest_dir_path, rel_html_path)
+            
+            # Generate the page
+            generate_page(item_path, template_path, dest_path)
+            
+        elif os.path.isdir(item_path):
+            # This is a directory, recurse into it
+            # Create corresponding directory in destination
+            dest_subdir = os.path.join(dest_dir_path, item)
+            os.makedirs(dest_subdir, exist_ok=True)
+            
+            # Recurse
+            generate_pages_recursive(item_path, template_path, dest_subdir)
