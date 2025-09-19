@@ -1,3 +1,22 @@
+# Why Tom Bombadil Is Problematic
+
+[< Back Home](/)
+
+![Tom Bombadil](/images/tom.png)
+
+Tom Bombadil is a memorable but divisive figure in Tolkien's narrative. This short essay argues that, while interesting, his episode interrupts the novel's momentum and adds little to the central plot.
+
+## Introduction
+
+This piece examines Tom Bombadil's role and why some readers find his appearance distracting from the story's main concerns.
+
+## Narrative Disruption
+
+Tom's episode provides a tone and pace shift that can feel incongruous with the rest of the book. It does not advance the main plot and raises questions that are not resolved in the text.
+
+## Conclusion
+
+Tom Bombadil remains an intriguing literary puzzle. He enriches the world in texture but is not essential to the central quest.
 # Why Tom Bombadil Was a Mistake
 
 [< Back Home](/)

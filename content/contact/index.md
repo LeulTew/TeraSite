@@ -2,8 +2,6 @@
 
 [< Back Home](/)
 
-Give me a call anytime to chat about Tolkien!
+If you'd like to reach out, please visit the <a href="/contact">contact page</a> or send an email to the address provided on the contact form.
 
-`555-555-5555`
-
-**"Váya márië."**
+Phone and email are not published publicly on this site.

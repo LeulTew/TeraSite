@@ -70,566 +70,71 @@
   right: -15px;
   bottom: -15px;
   background: linear-gradient(45deg,
-    var(--gold-fire),
-    var(--mystical-purple),
-    var(--elf-green),
-    var(--dragon-red),
-    var(--gold-fire));
-  border-radius: 25px;
-  z-index: -1;
-  opacity: 0.6;
-  animation: borderGlow 4s ease-in-out infinite alternate;
-}
-
-@keyframes borderGlow {
-  0% { opacity: 0.4; filter: blur(2px); }
-  100% { opacity: 0.8; filter: blur(0px); }
-}
-
-/* HEADER - MAGICAL TITLE */
-header {
-  text-align: center;
-  padding: 3rem 0 2rem;
-  border-bottom: 4px solid var(--gold-fire);
-  margin-bottom: 3rem;
-  position: relative;
-}
-
-.site-title {
-  font-size: 4rem;
-  font-weight: bold;
-  color: var(--shadow-black);
-  text-shadow:
-    3px 3px 6px rgba(0, 0, 0, 0.5),
-    0 0 30px rgba(255, 215, 0, 0.8),
-    0 0 60px rgba(255, 215, 0, 0.4);
-  margin-bottom: 1rem;
-  font-family: 'Cinzel', serif;
-  letter-spacing: 3px;
-  position: relative;
-  animation: titleGlow 3s ease-in-out infinite alternate;
-}
-
-@keyframes titleGlow {
-  0% { text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.6); }
-  100% { text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5), 0 0 40px rgba(255, 215, 0, 1), 0 0 80px rgba(255, 215, 0, 0.6); }
-}
-
-.site-subtitle {
-  font-size: 1.4rem;
-  color: var(--forest-brown);
-  font-style: italic;
-  margin-bottom: 1rem;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-}
-
-/* NAVIGATION - ELVEN STYLE */
-nav {
-  background: linear-gradient(135deg, var(--mystical-purple), var(--wizard-blue));
-  padding: 1.5rem 3rem;
-  border-radius: 15px;
-  margin-bottom: 3rem;
-  box-shadow: var(--shadow);
-  border: 2px solid var(--gold-fire);
-  position: relative;
-  overflow: hidden;
-}
-
-nav::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  animation: navShine 3s ease-in-out infinite;
-}
-
-@keyframes navShine {
-  0% { left: -100%; }
-  100% { left: 100%; }
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 3rem;
-  flex-wrap: wrap;
-  position: relative;
-  z-index: 1;
-}
-
-nav a {
-  color: var(--parchment);
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.1rem;
-  padding: 0.8rem 1.5rem;
-  border-radius: 10px;
-  transition: all 0.4s ease;
-  position: relative;
-  border: 2px solid transparent;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
-}
-
-nav a:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-  border-color: var(--gold-fire);
-  text-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
-}
-
-/* SECTIONS - MAGICAL CARDS */
-.section {
-  margin-bottom: 3rem;
-  padding: 2.5rem;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(245, 245, 220, 0.8));
-  border-radius: 15px;
-  box-shadow: var(--shadow);
-  border: 2px solid var(--ancient-gold);
-  position: relative;
-  overflow: hidden;
-  backdrop-filter: blur(5px);
-}
-
-.section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 6px;
-  background: linear-gradient(90deg, var(--gold-fire), var(--mystical-purple), var(--elf-green));
-  border-radius: 15px 15px 0 0;
-}
-
-.section::after {
-  content: '❋';
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  font-size: 2rem;
-  color: var(--gold-fire);
-  opacity: 0.6;
-  animation: runeSpin 6s linear infinite;
-}
-
-@keyframes runeSpin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-/* TYPOGRAPHY - ELVEN SCRIPT */
-h1, h2, h3, h4, h5, h6 {
-  color: var(--shadow-black);
-  margin-top: 2rem;
-  margin-bottom: 1.5rem;
-  font-family: 'Cinzel', serif;
-  letter-spacing: 1px;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-  position: relative;
-}
-
-h1 { font-size: 3.2rem; color: var(--mystical-purple); }
-h2 { font-size: 2.5rem; color: var(--elf-green); }
-h3 { font-size: 2rem; color: var(--forest-brown); }
-h4 { font-size: 1.6rem; }
-h5 { font-size: 1.4rem; }
-h6 { font-size: 1.2rem; }
-
-p {
-  margin-bottom: 1.8rem;
-  font-size: 1.1rem;
-  line-height: 1.8;
-  text-align: justify;
-  color: var(--shadow-black);
-}
-
-strong, b {
-  color: var(--dragon-red);
-  font-weight: 700;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-/* LINKS - MAGICAL PORTALS */
-a {
-  color: var(--mystical-purple);
-  text-decoration: none;
-  border-bottom: 2px solid transparent;
-  transition: all 0.3s ease;
-  position: relative;
-  font-weight: 500;
-}
-
-a::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--gold-fire), var(--mystical-purple));
-  transition: width 0.3s ease;
-}
-
-a:hover::before {
-  width: 100%;
-}
-
-a:hover {
-  color: var(--dragon-red);
-  text-shadow: 0 0 10px rgba(139, 0, 0, 0.5);
-  transform: translateY(-1px);
-}
-
-/* BLOCKQUOTES - ANCIENT SCROLLS */
-blockquote {
-  background: linear-gradient(135deg, rgba(47, 79, 47, 0.1), rgba(34, 139, 34, 0.1));
-  border-left: 6px solid var(--gold-fire);
-  padding: 2.5rem;
-  margin: 2.5rem 0;
-  border-radius: 0 15px 15px 0;
-  position: relative;
-  font-style: italic;
-  font-size: 1.3rem;
-  color: var(--shadow-black);
-  box-shadow: inset 0 0 30px rgba(255, 215, 0, 0.1);
-  border-right: 2px solid var(--mystical-purple);
-}
-
-blockquote::before {
-  content: '"';
-  font-size: 5rem;
-  color: var(--gold-fire);
-  position: absolute;
-  top: -15px;
-  left: 15px;
-  opacity: 0.4;
-  text-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
-}
-
-blockquote::after {
-  content: '"';
-  font-size: 5rem;
-  color: var(--gold-fire);
-  position: absolute;
-  bottom: -40px;
-  right: 15px;
-  opacity: 0.4;
-  text-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
-}
-
-/* CODE - ELVEN RUNES */
-code {
-  background: linear-gradient(135deg, var(--wizard-blue), var(--mystical-purple));
-  color: var(--parchment);
-  padding: 0.4rem 0.8rem;
-  border-radius: 8px;
-  font-family: 'Courier New', monospace;
-  font-size: 0.95rem;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
-  border: 1px solid var(--gold-fire);
-  position: relative;
-}
-
-code::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(45deg, var(--gold-fire), var(--mystical-purple), var(--elf-green));
-  border-radius: 10px;
-  z-index: -1;
-  opacity: 0.3;
-}
-
-pre {
-  background: linear-gradient(135deg, var(--shadow-black), var(--wizard-blue));
-  color: var(--parchment);
-  padding: 2rem;
-  border-radius: 12px;
-  overflow-x: auto;
-  border: 2px solid var(--ancient-gold);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-  position: relative;
-  margin: 2rem 0;
-}
-
-pre::before {
-  content: 'Terminal - Elven Forge';
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: var(--gold-fire);
-  color: var(--shadow-black);
-  padding: 0.5rem 1rem;
-  border-radius: 12px 0 0 0;
-  font-size: 0.9rem;
-  font-weight: bold;
-  font-family: 'Cinzel', serif;
-}
-
-pre code {
-  background: none;
-  color: inherit;
-  padding: 0;
-  border-radius: 0;
-  border: none;
-  box-shadow: none;
-}
-
-/* IMAGES - MAGICAL PORTRAITS */
-img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 15px;
-  border: 4px solid var(--ancient-gold);
-  box-shadow:
-    0 15px 35px rgba(0, 0, 0, 0.4),
-    0 0 30px rgba(255, 215, 0, 0.3),
-    inset 0 0 30px rgba(255, 215, 0, 0.1);
-  transition: all 0.4s ease;
-  margin: 2rem 0;
-  position: relative;
-}
-
-img:hover {
-  transform: scale(1.03) rotate(1deg);
-  box-shadow:
-    0 20px 45px rgba(0, 0, 0, 0.5),
-    0 0 50px rgba(255, 215, 0, 0.5),
-    0 0 100px rgba(255, 215, 0, 0.2);
-}
-
-/* LISTS - ANCIENT CATALOGS */
-ul, ol {
-  margin: 2rem 0;
-  padding-left: 2rem;
-}
-
-li {
-  margin-bottom: 1rem;
-  position: relative;
-  padding-left: 1rem;
-}
-
-li::marker {
-  color: var(--gold-fire);
-  font-weight: bold;
-  font-size: 1.2rem;
-  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-}
-
-/* FOOTER - ANCIENT SEAL */
-footer {
-  text-align: center;
-  padding: 3rem;
-  background: linear-gradient(135deg, var(--mystical-purple), var(--shadow-black));
-  color: var(--parchment);
-  border-radius: 15px;
-  margin-top: 4rem;
-  box-shadow: var(--shadow);
-  border: 2px solid var(--gold-fire);
-  position: relative;
-}
-
-footer::before {
-  content: '❋ ✦ ❋';
-  position: absolute;
-  top: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 2rem;
-  color: var(--gold-fire);
-  background: var(--shadow-black);
-  padding: 0 1rem;
-  border-radius: 20px;
-}
-
-footer p {
-  margin: 0.8rem 0;
-  font-size: 1rem;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
-}
-
-footer a {
-  color: var(--gold-fire);
-  font-weight: bold;
-  text-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
-}
-
-/* RESPONSIVE DESIGN */
-@media (max-width: 768px) {
-  .container {
-    margin: 1rem;
-    padding: 1rem;
-  }
-
-  .site-title {
-    font-size: 2.8rem;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .section {
-    padding: 1.5rem;
-  }
-
-  blockquote {
-    padding: 1.5rem;
-    font-size: 1.1rem;
-  }
-
-  h1 { font-size: 2.5rem; }
-  h2 { font-size: 2rem; }
-  h3 { font-size: 1.6rem; }
-}
-
-/* ANIMATIONS */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.container {
-  animation: fadeInUp 1.2s ease-out;
-}
-
-.section {
-  animation: fadeInUp 1s ease-out;
-  animation-fill-mode: both;
-}
-
-.section:nth-child(1) { animation-delay: 0.2s; }
-.section:nth-child(2) { animation-delay: 0.4s; }
-.section:nth-child(3) { animation-delay: 0.6s; }
-.section:nth-child(4) { animation-delay: 0.8s; }
-
-/* MAGICAL CURSOR */
-* {
-  cursor: default;
-}
-
-a, button {
-  cursor: pointer;
-}
-
-/* SCROLLBAR - ELVEN STYLE */
-::-webkit-scrollbar {
-  width: 15px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--shadow-black);
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, var(--gold-fire), var(--ancient-gold));
-  border-radius: 10px;
-  border: 3px solid var(--shadow-black);
-  box-shadow: inset 0 0 10px rgba(255, 215, 0, 0.3);
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, var(--mystical-purple), var(--gold-fire));
-}
-
-/* SPECIAL TOLKIEN EFFECTS */
-.tolkien-glow {
-  text-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
-  animation: glowPulse 2s ease-in-out infinite alternate;
-}
-
-@keyframes glowPulse {
-  0% { text-shadow: 0 0 15px rgba(255, 215, 0, 0.6); }
-  100% { text-shadow: 0 0 25px rgba(255, 215, 0, 1), 0 0 40px rgba(255, 215, 0, 0.8); }
-}
-
-.elven-rune {
-  font-family: 'Arial Unicode MS', sans-serif;
-  color: var(--gold-fire);
-  font-size: 3rem;
-  opacity: 0.7;
-  text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
-  animation: runeFloat 4s ease-in-out infinite alternate;
-}
-
-@keyframes runeFloat {
-  0% { transform: translateY(0px) rotate(0deg); }
-  100% { transform: translateY(-10px) rotate(5deg); }
-}
-
-/* MAGICAL BUTTONS */
-.magic-btn {
-  background: linear-gradient(135deg, var(--gold-fire), var(--ancient-gold));
-  color: var(--shadow-black);
-  border: none;
-  padding: 1rem 2rem;
-  border-radius: 10px;
-  font-weight: bold;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  position: relative;
-  overflow: hidden;
-}
-
-.magic-btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  transition: left 0.5s;
-}
-
-.magic-btn:hover::before {
-  left: 100%;
-}
-
-.magic-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-}
-
-/* CHARACTER HIGHLIGHT */
-.character-highlight {
-  background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(75, 0, 130, 0.1));
-  border: 2px solid var(--gold-fire);
-  border-radius: 15px;
-  padding: 2rem;
-  margin: 2rem 0;
-  position: relative;
-  box-shadow: 0 0 30px rgba(255, 215, 0, 0.2);
-}
-
-.character-highlight::before {
-  content: '✦';
-  position: absolute;
-  top: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 2rem;
-  color: var(--gold-fire);
-  background: var(--shadow-black);
-  padding: 0 1rem;
-  border-radius: 20px;
-}
+    /* Minimal dark glass stylesheet */
+
+    :root {
+      --bg: #0b0f14;
+      --panel: rgba(255,255,255,0.03);
+      --glass: rgba(255,255,255,0.04);
+      --muted: #9aa6af;
+      --fg: #e6eef3;
+      --accent: #66d0ff;
+      --accent-2: #7b61ff;
+      --radius: 12px;
+      --soft-shadow: 0 6px 22px rgba(2,6,23,0.6);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0 }
+    html,body { height:100% }
+    body {
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+      background: radial-gradient(800px 400px at 10% 10%, rgba(120,110,255,0.03), transparent), var(--bg);
+      color: var(--fg);
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+      line-height:1.6;
+    }
+
+    .container { width:100%; max-width:980px; margin:40px auto; padding:28px }
+
+    header.site-header { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:18px }
+    .brand { font-weight:600; color:var(--fg); text-decoration:none }
+    .nav-links { list-style:none; display:flex; gap:12px }
+    .nav-links a { color:var(--muted); text-decoration:none; padding:8px 12px; border-radius:10px; font-weight:600 }
+    .nav-links a:hover { color:var(--fg); background: rgba(255,255,255,0.03); transform:translateY(-2px) }
+
+    .post { background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:var(--radius); padding:28px; box-shadow:var(--soft-shadow); border:1px solid rgba(255,255,255,0.03); backdrop-filter: blur(8px) }
+    .post-title { font-size:28px; margin-bottom:12px; font-weight:700 }
+    .post-body p { color:var(--muted); margin-bottom:12px }
+
+    /* Links */
+    a { color:var(--accent); text-decoration:none; transition:color .18s ease, transform .18s ease }
+    a:hover { color:var(--accent-2); transform:translateY(-1px) }
+
+    /* Lists */
+    ul,ol { margin:1rem 0 1.6rem 1.4rem }
+
+    /* Code */
+    code { background: rgba(0,0,0,0.35); padding:3px 6px; border-radius:6px; font-family: monospace }
+    pre { background: rgba(0,0,0,0.35); padding:16px; border-radius:10px; overflow:auto }
+
+    /* Images */
+    img { max-width:100%; height:auto; border-radius:10px; display:block; margin:1rem 0 }
+
+    /* Typography */
+    h1 { font-size:2.4rem; margin:0 0 1rem 0; font-weight:700 }
+    h2 { font-size:1.6rem; margin:1.2rem 0 0.8rem 0 }
+    p { margin-bottom:1rem; color:var(--muted) }
+
+    /* Footer */
+    footer { text-align:center; padding:2rem 0; color:var(--muted); margin-top:3rem }
+
+    /* Subtle button */
+    .btn { display:inline-block; padding:10px 16px; border-radius:10px; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border:1px solid rgba(255,255,255,0.04); color:var(--fg); font-weight:600 }
+    .btn:hover { transform:translateY(-2px); box-shadow:0 8px 20px rgba(2,6,23,0.6) }
+
+    /* Responsive tweaks */
+    @media (max-width:720px){ .container{padding:18px;margin:22px auto} .post{padding:18px} .post-title{font-size:22px} .nav-links{display:none} }
+
+    /* Small interactive touches */
+    .post a { transition: color .15s ease, text-decoration .15s ease }
+    .post a:hover { text-decoration:underline }
