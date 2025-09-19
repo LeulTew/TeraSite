@@ -197,9 +197,13 @@ def generate_page(from_path, template_path, dest_path, basepath="/"):
     # Replace placeholders in template
     final_html = template_content.replace("{{ Title }}", title).replace("{{ Content }}", html_content)
     
-    # Replace href="/" and src="/" with basepath
+    # Replace href="/" and src="/" with basepath (for absolute paths)
     final_html = final_html.replace('href="/', f'href="{basepath}')
     final_html = final_html.replace('src="/', f'src="{basepath}')
+    
+    # Replace specific relative paths that need basepath
+    final_html = final_html.replace('href="index.css"', f'href="{basepath}index.css"')
+    final_html = final_html.replace('href="/"', f'href="{basepath}"')
     
     # Create destination directory if it doesn't exist
     dest_dir = os.path.dirname(dest_path)
