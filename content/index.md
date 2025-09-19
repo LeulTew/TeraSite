@@ -16,11 +16,9 @@ I've wandered the paths of Middle-earth for countless moons, from the peaceful S
 
 Dive into my latest musings on Tolkien's grand tapestry:
 
-- [**Why Glorfindel is More Impressive than Legolas**](/blog/glorfindel) - A deep exploration of the Balrog-slayer's enduring legacy
-- [**Why Tom Bombadil Was a Mistake**](/blog/tom) - An unpopular opinion from the ancient chronicles
-- [**The Unparalleled Majesty of "The Lord of the Rings"**](/blog/majesty) - Celebrating Tolkien's masterpiece
-
-## ✨ Why Middle-earth Captures My Soul
+- <b>Why Glorfindel is More Impressive than Legolas</b> ([Read More](/blog/glorfindel)) - A deep exploration of the Balrog-slayer's enduring legacy
+- <b>Why Tom Bombadil Was a Mistake</b> ([Read More](/blog/tom)) - An unpopular opinion from the ancient chronicles
+- <b>The Unparalleled Majesty of "The Lord of the Rings"</b> ([Read More](/blog/majesty)) - Celebrating Tolkien's masterpiece## ✨ Why Middle-earth Captures My Soul
 
 The legendarium is a vast ocean of wonder that rewards deep exploration:
 
@@ -58,7 +56,7 @@ func main(){
 
 Fancy a chat about Middle-earth? Whether you're a seasoned loremaster or just beginning your journey, I'd love to hear from you!
 
-**[📨 Contact the Fellowship](/contact)**
+<b>📨 Contact the Fellowship</b> ([Get in Touch](/contact))
 
 ---
 

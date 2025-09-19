@@ -1,18 +1,15 @@
-/* TOLKIEN FAN CLUB - EPIC MAGICAL DESIGN */
-/* Inspired by the ancient magic of Middle-earth */
+/* TOLKIEN FAN CLUB - CLEAN MODERN DESIGN */
+/* Inspired by Middle-earth with a modern, readable aesthetic */
 
 :root {
-  --gold-fire: #FFD700;
-  --ancient-gold: #DAA520;
-  --mystical-purple: #4B0082;
-  --elf-green: #228B22;
-  --shadow-black: #0a0a0a;
-  --parchment: #F5F5DC;
-  --dragon-red: #8B0000;
-  --wizard-blue: #191970;
-  --forest-brown: #8B4513;
-  --glow: 0 0 20px rgba(255, 215, 0, 0.4);
-  --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --gold-accent: #D4AF37;
+  --dark-text: #2C1810;
+  --light-bg: #F8F6F0;
+  --card-bg: #FFFFFF;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --border: #E8E3D8;
+  --link-color: #8B4513;
+  --link-hover: #654321;
 }
 
 * {
@@ -23,51 +20,264 @@
 
 body {
   font-family: 'Georgia', 'Times New Roman', serif;
-  background:
-    radial-gradient(ellipse at top, rgba(75, 0, 130, 0.3) 0%, transparent 50%),
-    radial-gradient(ellipse at bottom, rgba(139, 0, 0, 0.2) 0%, transparent 50%),
-    linear-gradient(180deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%);
-  background-attachment: fixed;
-  color: var(--parchment);
-  line-height: 1.8;
+  background-color: var(--light-bg);
+  color: var(--dark-text);
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+/* MODERN CONTAINER */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: var(--card-bg);
   min-height: 100vh;
+  box-shadow: var(--shadow);
+}
+
+/* CLEAN HEADER */
+header {
+  text-align: center;
+  padding: 3rem 0 2rem;
+  border-bottom: 2px solid var(--border);
+  margin-bottom: 3rem;
+}
+
+.site-title {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: var(--dark-text);
+  margin-bottom: 1rem;
+  font-family: 'Georgia', serif;
+  letter-spacing: 1px;
+}
+
+.site-subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  font-style: italic;
+}
+
+/* CLEAN NAVIGATION */
+nav {
+  background: var(--light-bg);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  border: 1px solid var(--border);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: var(--link-color);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+nav a:hover {
+  background: var(--gold-accent);
+  color: white;
+  border-color: var(--gold-accent);
+}
+
+/* CLEAN SECTIONS */
+.section {
+  margin-bottom: 2.5rem;
+  padding: 2rem;
+  background: var(--card-bg);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.section h2, .section h3 {
+  color: var(--dark-text);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+/* MODERN TYPOGRAPHY */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--dark-text);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-family: 'Georgia', serif;
+  line-height: 1.3;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+
+p {
+  margin-bottom: 1.5rem;
+  color: var(--dark-text);
+}
+
+strong, b {
+  color: var(--dark-text);
+  font-weight: 600;
+}
+
+/* CLEAN LINKS */
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+a:hover {
+  border-bottom-color: var(--link-color);
+}
+
+/* MODERN BLOCKQUOTES */
+blockquote {
+  background: var(--light-bg);
+  border-left: 4px solid var(--gold-accent);
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: var(--dark-text);
+}
+
+blockquote::before {
+  content: '"';
+  font-size: 3rem;
+  color: var(--gold-accent);
   position: relative;
-  overflow-x: hidden;
+  top: -10px;
+  margin-right: 10px;
 }
 
-/* MAGICAL RUNES BACKGROUND */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image:
-    radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(75, 0, 130, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 60% 40%, rgba(34, 139, 34, 0.1) 0%, transparent 50%);
-  pointer-events: none;
-  z-index: -1;
+/* CLEAN CODE */
+code {
+  background: var(--light-bg);
+  color: var(--dark-text);
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-family: 'Monaco', 'Menlo', monospace;
+  font-size: 0.9rem;
+  border: 1px solid var(--border);
 }
 
-/* FLOATING MAGICAL PARTICLES */
-@keyframes float {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(180deg); }
+pre {
+  background: var(--light-bg);
+  color: var(--dark-text);
+  padding: 1.5rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  margin: 1.5rem 0;
 }
 
-body::after {
-  content: '✦ ❋ ✧ ❉ ✦ ❋ ✧ ❉';
-  position: fixed;
-  top: 10%;
-  left: 5%;
-  font-size: 2rem;
-  color: var(--gold-fire);
-  opacity: 0.3;
-  animation: float 8s ease-in-out infinite;
-  pointer-events: none;
-  z-index: -1;
+pre code {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+/* CLEAN IMAGES */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  margin: 1.5rem 0;
+}
+
+/* CLEAN LISTS */
+ul, ol {
+  margin: 1.5rem 0;
+  padding-left: 2rem;
+}
+
+li {
+  margin-bottom: 0.8rem;
+}
+
+/* CLEAN FOOTER */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: var(--light-bg);
+  color: #666;
+  border-radius: 8px;
+  margin-top: 3rem;
+  border: 1px solid var(--border);
+}
+
+footer p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: var(--link-color);
+  font-weight: 500;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .container {
+    margin: 0;
+    padding: 1rem;
+  }
+
+  .site-title {
+    font-size: 2.2rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .section {
+    padding: 1.5rem;
+  }
+}
+
+/* SUBTLE ANIMATIONS */
+.section {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* TOLKIEN ACCENTS */
+.tolkien-accent {
+  color: var(--gold-accent);
+  font-weight: 600;
+}
+
+.elven-script {
+  font-family: 'Georgia', serif;
+  font-style: italic;
 }
 
 /* MAIN CONTAINER - ANCIENT TOME STYLE */
